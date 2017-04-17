@@ -1,0 +1,25 @@
+{
+  "name": "azure-bootcamp-2017",
+  "version": "0.0.0-development",
+  "description": "Sources for my talk about Docker on Azure App Service at the Azure Bootcamp 2017 event in Winnipeg, Manitoba, Canada",
+  "main": "index.ts",
+  "repository": {},
+  "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@types/chance": "^0.7.32",
+    "@types/googlemaps": "^3.26.8",
+    "@types/hapi": "^16.0.1",
+    "@types/inert": "^4.2.0",
+    "chance": "^1.0.6",
+    "hapi": "^16.1.1",
+    "inert": "^4.2.0",
+    "protoculture": "^2.0.2",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  },
+  "devDependencies": {
+    "onchange": "^3.2.1",
+    "webpack": "^2.4.1"
+  }
+}
