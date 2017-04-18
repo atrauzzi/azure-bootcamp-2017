@@ -1,4 +1,4 @@
-import { App, Environment, Suite, LogLevel, requestJson } from "protoculture";
+import { App, Environment, Suite, LogLevel, requestJson, createRequest } from "protoculture";
 import { DroneEnvironment } from "./DroneEnvironment";
 import { Drone } from "../Drone";
 import { ContentType, Method } from "protoculture/lib/CreateRequest";
@@ -29,7 +29,7 @@ export class BootcampDroneApp implements App {
             longitude: info["longitude"],
         };
 
-        this.suite.logger.log(JSON.stringify(this.info),this, LogLevel.Info);
+        this.suite.logger.log(JSON.stringify(this.info), this, LogLevel.Info);
 
         setInterval(
             () => this.updateMaster(),
@@ -43,7 +43,9 @@ export class BootcampDroneApp implements App {
 
         const masterHost = this.environment.MASTER_HOST || "http://localhost:8080";
 
-        await requestJson(`${masterHost}/drone`, {
+        this.suite.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
+
+        await createRequest(`${masterHost}/drone`, {
             contentType: ContentType.Json,
             data: this.info,
             method: Method.Post,

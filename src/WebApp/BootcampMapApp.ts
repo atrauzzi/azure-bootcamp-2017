@@ -14,6 +14,8 @@ export class BootcampMapApp implements App {
 
     protected map: google.maps.Map;
 
+    protected markers: google.maps.Marker[];
+
     public constructor(protected environment: Environment<any>) {
 
     }
@@ -28,19 +30,34 @@ export class BootcampMapApp implements App {
 
         await lazyLoad(googleMapsUri);
 
+        this.map = new google.maps.Map(document.getElementById("map"), {
+            center: new google.maps.LatLng(lat, lon),
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.HYBRID,
+            streetViewControl: false,
+            mapTypeControl: false,
+        });
+
+        setInterval(() => this.loadDrones(), 5000);
+    }
+
+    protected async loadDrones() {
+
+        this.suite.logger.log("Loading current drones", this, LogLevel.Info);
+
         const drones = await requestJson<{[key: string]: Drone}>("/connected");
 
         this.suite.logger.log(JSON.stringify(drones), this, LogLevel.Info);
 
-        this.map = new google.maps.Map(document.getElementById("map"), {
-            center: new google.maps.LatLng(lat, lon),
-            zoom: 6,
-        });
+        _.forEach(this.markers, marker => marker.setMap(null));
 
-        const markers = _.map(drones, (drone) => new google.maps.Marker({
+        this.markers = _.map(drones, (drone) => new google.maps.Marker({
             position: new google.maps.LatLng(drone.latitude, drone.longitude),
-            label: drone.id,
+            title: drone.id,
             map: this.map,
+            icon: {
+                url: "https://azure.microsoft.com/svghandler/app-service/?width=50&height=50",
+            }
         }));
     }
 }

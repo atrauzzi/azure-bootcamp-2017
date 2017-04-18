@@ -6,6 +6,10 @@
   "repository": {},
   "author": "Alexander Trauzzi <atrauzzi@gmail.com>",
   "license": "Apache-2.0",
+  "scripts": {
+    "drone": "ts-node src/Drone/BootcampDroneSuite.ts",
+    "server": "ts-node src/Server/BootcampServerSuite.ts"
+  },
   "dependencies": {
     "@types/chance": "^0.7.32",
     "@types/googlemaps": "^3.26.8",

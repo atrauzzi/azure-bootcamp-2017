@@ -33,7 +33,7 @@ export class BootcampApiApp implements App {
         await server.register(Inert);
 
         server.connection({
-            port: this.environment.PORT || 8080,
+            port: this.environment.PORT || 80,
             host: "0.0.0.0"
         });
 
