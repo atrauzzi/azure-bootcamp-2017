@@ -12,7 +12,7 @@ So now that we've had a look at what docker is like and how it works, let's try 
 When creating resources, use the region `West US` when prompted.
 
 #### Step 1
-We need to set up a new resource on Azure so that we have somewhere to hold our images.  This resource type is known as a [container registry](https://azure.microsoft.com/en-ca/services/container-registry/).  While Docker offers their own registry service, Microsoft also offers one that is billed and managed from Azure.
+We need to set up a new resource on Azure so that we have somewhere to hold our images.  This resource type is known as a container registry.  While Docker offers a hosted container registry, [Microsoft also offers one](https://azure.microsoft.com/en-ca/services/container-registry/) that is billed and managed from Azure.
 
 Go into Azure and perform the following tasks:
 
