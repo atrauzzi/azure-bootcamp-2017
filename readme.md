@@ -15,10 +15,11 @@ This presentation offers a quick look at how you can use containers to wrap a si
 
 ### Getting Ready
 
+ - An Azure account
  - Docker for...
    - [Linux](https://docs.docker.com/engine/installation/)
    - [Windows](https://docs.docker.com/docker-for-windows/install/)
-   - [Mac](https://docs.docker.com/docker-for-mac/install/)
+   - [macOS](https://docs.docker.com/docker-for-mac/install/)
  - Docker compose
  - Make sure port 8080 isn't already in use on your laptop if you want to see the map
 
@@ -54,3 +55,7 @@ For drones, they will look for a running `server` instance at `localhost`. You c
 ### Meta
 
 If you have any questions or are interested in having me present at your event, feel free to reach out!
+
+#### Useful References
+
+ - [Azure Container Registry Documentation](https://docs.microsoft.com/en-ca/azure/container-registry/)

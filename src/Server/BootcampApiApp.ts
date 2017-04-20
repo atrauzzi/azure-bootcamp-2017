@@ -78,7 +78,7 @@ export class BootcampApiApp implements App {
 
     protected addDrone(request: Hapi.Request, reply: Hapi.IReply) {
     
-        this.suite.logger.log("Adding a drone", this, LogLevel.Info);
+        this.suite.logger.log("Setting drone metadata", this, LogLevel.Info);
         
         const drone: Drone = request.payload;
 
@@ -93,7 +93,7 @@ export class BootcampApiApp implements App {
 
     protected connected(request: Hapi.Request, reply: Hapi.IReply) {
 
-        this.suite.logger.log("Checked", this, LogLevel.Info);
+        this.suite.logger.log("Checked by a client", this, LogLevel.Info);
         reply(this.drones);
     }
 }

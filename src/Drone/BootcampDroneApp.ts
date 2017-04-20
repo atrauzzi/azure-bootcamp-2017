@@ -41,7 +41,7 @@ export class BootcampDroneApp implements App {
 
         this.suite.logger.log("Updating master", this, LogLevel.Info);
 
-        const masterHost = this.environment.MASTER_HOST || "http://localhost:8080";
+        const masterHost = this.environment.MASTER_HOST || "http://server";
 
         this.suite.logger.log(`Connecting to ${masterHost}`, this, LogLevel.Info);
 
