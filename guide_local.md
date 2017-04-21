@@ -31,7 +31,11 @@ Grab the project files in one of two ways:
 Create the file `public/bootcamp-2017-webapp.env.json` and place the following in it:
 
 ```
-INSERT ENV FILE HERE! :)
+{
+    "GOOGLE_MAPS_API_KEY": "GOOGLE_MAPS_API_KEY_HERE",
+    "GOOGLE_MAPS_CENTER_LAT": 49.8537377,
+    "GOOGLE_MAPS_CENTER_LON": -97.2923061
+}
 ```
 
 #### Step 4
